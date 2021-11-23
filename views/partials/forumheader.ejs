@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta info -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description"
+    content="AlgoVIz is a web platform which is used to visualize the sorting algorithms. It supports Merge, Quick, Bubble, Heap, Selection, Insertion, Shell, Cocktail shaker, comb, and cycle sort.">
+  <meta name="keywords"
+    content="algorithms, visualization, sorting algorithms, heap sort, merge sort, quick sort, bubble sort, selection sort, insertion sort, shell sort, cocktail-shaker sort, comb sort, cycle sort, sorting algorithms visualization">
+
+  <!-- google fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+
+  <!-- internal CSS -->
+  <link rel="stylesheet" href="/scss/style.css" />
+
+  <!-- title -->
+  <title>AlgoViz Forum</title>
+</head>
+
+<header>
+  <section id="logo">
+    <span class="logo-text">AlgoViz Discussion Forum</span>
+  </section>
+  <% if(addPost) {%>
+  <section id="addPost" class="px-4">
+    <a href="/forum/addPost" title="Click to create a post">
+      <button class="btn btn-outline-success py-2">
+        <i class="fa fa-plus-circle"></i>
+        Add Post
+      </button>
+    </a>
+  </section>
+  <% } else { } %>
+  
+  <section class="px-4">
+    <a href="/" title="Start Visualizing!">
+      <button class="btn btn-warning" type="button">
+        <i class="fa fa-chart-bar"></i>
+        Visualize
+      </button>
+      </a>
+    </section>
+  
+</header>
+<!-- header closes -->

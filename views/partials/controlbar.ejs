@@ -1,0 +1,43 @@
+<!-- controls with speed and size controlling -->
+<!-- hamburger for controls -->
+
+<div id="new-array-button">
+  <button type="button" id="new-array">
+    <span> LOAD NEW DATA</span>
+  </button>
+</div>
+
+<div id="controls">
+  <!-- generate new array button -->
+
+  <div id="speed-controls-container">
+    <span>Speed</span>
+    <input class="slider" type="range" name="speed" id="speed-control" min="0" max="101" value="50" step="20" />
+  </div>
+  <div id="size-controls-container">
+    <span>Size</span>
+    <input class="slider" type="range" name="size" id="size-control" min="10" max="101" value="50" step="10" />
+  </div>
+</div>
+<!-- different sorting algos selection -->
+<div id="options">
+  <span class="merge button">Merge</span>
+  <span class="quick button">Quick</span>
+  <span class="bubble button">Bubble</span>
+  <span class="insertion button">Insertion</span>
+  <span class="selection button">Selection</span>
+  
+  <a href="/forum" title="Welcome to DIscussion Forum !">
+    <button class="btn btn-success" type="button">
+      <i class="fa fa-comments"></i>
+      Forum
+    </button>
+
+  <a href="/auth/logout" title="Click to Log Out!">
+    <button class="btn btn-warning" type="button">
+      <%=user.username.toUpperCase().trim()%>
+      <i class="fa fa-sign-out-alt"></i>
+    </button>
+  </a>
+  </a>
+</div>

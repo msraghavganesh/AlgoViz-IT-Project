@@ -1,0 +1,59 @@
+<% include partials/forumheader %>
+
+  <body class="overflow-auto">
+    <section id="search_bar" class="my-1 py-1 bg-light">
+      <div class="container">
+        <form action="/forum/view" method="POST">
+          <div class="row">
+            <div class="col-md-5 p-1">
+              <select name="filter" class="form-control">
+                <option selected disabled>Select Filter...</option>
+                <option name="title">Title</option>
+                <option name="algorithm">Algorithm</option>
+              </select>
+            </div>
+            <div class="col-md-5 p-1">
+              <input name="searchName" type="text" class="form-control" placeholder="Search Keyword">
+            </div>
+            <div class="col-md-2 p-1">
+              <input type="submit" class="btn btn-outline-primary btn-block" value="Search">
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section id="browse_question">
+      <div class="container">
+
+        <% posts.forEach( post=> { %>
+          <div class="row">
+            <div class="card col py-2">
+              <div class="card-body">
+                <h5 class="card-title text-capitalize">
+                  <%=post.title%>
+                </h5>
+                <p class="text-muted" >
+                  <%=_.truncate(post.content, {'length': 30, 'separator': ' '}) %>
+                </p>
+                <p class="text-muted" style="float: left;">
+                  <i class="fa fa-user"></i>
+                  <small class="text-capitalize bold">
+                    <%=post.author.username %>
+                  </small>
+                  <br>
+                  <i class="fa fa-tag"></i>
+                  <small class="text-capitalize px-1 rounded border border-success">
+                    <%=post.algorithm %>
+                  </small>
+                </p>
+                <a href="/forum/addComment/<%=post.id%>">
+                  <button class="btn btn-outline-success" style="float: right;">Comment</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+  </body>
+  <% include partials/footer %>

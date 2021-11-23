@@ -1,0 +1,42 @@
+<% include ../partials/forumheader %>
+
+  <div class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card">
+          <div class="card-header text-center">
+            <h4>Add Post</h4>
+          </div>
+          <div class="card-block">
+            <form class="p-3" action="/forum/addPost" method="POST">
+
+              <div class="form-group">
+                <label class="form-control-label">Title</label>
+                <input type="text" name="post[title]" placeholder="Post Title" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <select name="post[algorithm]" class="form-control">
+                  <option selected disabled>Select Filter...</option>
+                  <option name="merge" value="merge">Merge Sort</option>
+                  <option name="quick" value="quick">Quick Sort</option>
+                  <option name="bubble" value="bubble">Bubble Sort</option>
+                  <option name="insertion" value="insertion">Insertion Sort</option>
+                  <option name="selection" value="selection">Selection Sort</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label">Post Detials</label>
+                <textarea name="post[content]" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Submit Post</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <% include ../partials/footer %>

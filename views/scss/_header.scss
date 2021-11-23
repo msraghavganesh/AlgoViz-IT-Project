@@ -1,0 +1,238 @@
+$blackColor: rgb(34, 34, 34);
+
+header {
+  height: 12vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $blackColor;
+  color: white;
+  user-select: none;
+  position: relative;
+  z-index: 3;
+
+  #logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  #controls {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+
+    #speed-controls-container,
+    #size-controls-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input.slider {
+        -webkit-appearance: none;
+        background: transparent;
+        margin-top: 0.75rem;
+        background-color: rgb(95, 95, 95);
+        height: 4px;
+        border-radius: 5px;
+        outline: none;
+        width: 95%;
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: 2px solid #979797;
+          height: 0.875rem;
+          width: 0.875rem;
+          border-radius: 50%;
+          background: #ffffff;
+          cursor: pointer;
+          box-shadow: 0 0 4px 2px rgba(48, 48, 48, 0.3);
+          transition: filter 150ms ease-in-out;
+
+          &:hover {
+            filter: brightness(0.85);
+          }
+        }
+      }
+    }
+  }
+
+  #options {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 2;
+
+    span {
+      cursor: pointer;
+      padding: 5px;
+      position: relative;
+
+      // button hover effect
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        content: "";
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      &::before {
+        top: 0px;
+        transform: translateY(-10px);
+      }
+
+      &::after {
+        bottom: 0px;
+        transform: translateY(10px);
+      }
+
+      &:hover::before,
+      &:hover::after {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  #new-array-button {
+    flex: 0.6;
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      background: transparent;
+      border: 1px solid white;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      padding: 10px 20px;
+      position: relative;
+
+      &::after {
+        background: #fff;
+        content: "";
+        height: 155px;
+        left: -75px;
+        opacity: 0.2;
+        position: absolute;
+        top: -50px;
+        width: 50px;
+        -webkit-transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        -webkit-transform: rotate(35deg);
+        -ms-transform: rotate(35deg);
+        transform: rotate(35deg);
+        z-index: -10;
+      }
+
+      &:hover::after {
+        left: 120%;
+        -webkit-transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      span {
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        z-index: 5;
+      }
+    }
+  }
+
+  #hamburger, #controls-hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  header {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  header {
+    #new-array-button {
+      button {
+        padding: 0;
+        border: 0;
+
+        span {
+          color: rgb(0, 197, 0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    #controls {
+      #speed-controls-container,
+      #size-controls-container {
+        input.slider {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    #logo {
+      span {
+        font-size: 16px;
+      }
+    }
+
+    #options {
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      flex-direction: column;
+      background: $blackColor;
+      height: 88vh;
+      width: 30%;
+      align-items: center;
+      display: none;
+    }
+
+    #new-array-button {
+      button {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+
+    #hamburger, #controls-hamburger {
+      flex: 0.4;
+      display: flex;
+      justify-content: center;
+    }
+
+    #controls {
+      display: none;
+      position: absolute;
+      top: 13vh;
+      background: $blackColor;
+      padding: 25px 15px;
+      border: 0;
+      border-radius: 5px;
+    }
+  }
+}
