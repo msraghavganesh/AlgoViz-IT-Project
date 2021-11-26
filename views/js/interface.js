@@ -13,7 +13,6 @@ import {
   enableButtonsAndInputs,
 } from "./visualization.js";
 
-/*********************Variables********************/
 
 // getting the main container
 const visualizerContainer = document.querySelector("#visualizer-container");
@@ -31,16 +30,12 @@ let timeout = 0;
 // main array to display on the screen
 let array = [];
 
-/***************************************************/
 
-/********************Function Calls*********************/
 
 // for default screen when first time screen opens or reloads
 getBarsForFifty();
 
-/****************************************************/
 
-/**********************Event listeners***************/
 
 // handling the event on insertion sort button
 document.querySelector(".insertion").addEventListener("click", () => {
@@ -201,9 +196,7 @@ document.querySelector("#new-array").addEventListener("click", () => {
   );
 });
 
-/***************************************************/
 
-/****************************functions****************/
 // getting the possible setTimeout value
 function getTimeoutValue(initialSpeed) {
   switch (initialSpeed) {
